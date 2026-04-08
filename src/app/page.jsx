@@ -19,13 +19,13 @@ export default function Home() {
         <p className="text-2xl">Menu de Opciónes</p>
         <div className="flex flex-row gap-12 items-center ">
           <Link
-            href="/auth/company/signup"
+            href="/auth/company/login"
             className="flex flex-col gap-5 items-center justify-center border-2 border-gray-600 rounded-lg p-5 shadow-sm shadow-gray-500"
           >
             <BsBuildings size={42} /> <p>Ingresar como Empresa</p>
           </Link>
           <Link
-            href="/auth/user/signup"
+            href="/auth/user/login"
             className="flex flex-col gap-5 items-center justify-center border-2 border-gray-600 rounded-lg p-5 shadow-sm shadow-gray-500"
           >
             <FaUser size={42} /> <p>Ingresar como Usuario</p>
