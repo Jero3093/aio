@@ -26,11 +26,24 @@ function LogInForm({ role }) {
             data[i].email === email &&
             data[i].password === password
           ) {
-            toast.success("Inicio de sesión exitoso");
-            setTimeout(() => {
-              router.push("/dashboard");
-            }, 1000);
+            const res = await fetch("/api/auth/session", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                name: data[i].name,
+                email: data[i].email,
+                role: "empresa",
+              }),
+            });
+            if (res.ok) {
+              toast.success("Inicio de sesión exitoso");
+            }
           }
+          // setTimeout(() => {
+          //   router.push("/dashboard");
+          // }, 1000);
         }
       } catch (error) {
         console.log(error);
