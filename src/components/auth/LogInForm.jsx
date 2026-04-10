@@ -1,5 +1,6 @@
 "use client";
 
+import createSession from "@/utils/auth/createSession";
 import { createSupabaseClient } from "@/utils/supabase/client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -26,24 +27,21 @@ function LogInForm({ role }) {
             data[i].email === email &&
             data[i].password === password
           ) {
-            const res = await fetch("/api/auth/session", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                name: data[i].name,
-                email: data[i].email,
-                role: "empresa",
-              }),
+            const res = await createSession({
+              name: data[i].name,
+              email: data[i].email,
+              role: "empresa",
             });
+
             if (res.ok) {
               toast.success("Inicio de sesión exitoso");
+            } else {
+              toast.error("Error al iniciar sesión");
             }
           }
-          // setTimeout(() => {
-          //   router.push("/dashboard");
-          // }, 1000);
+          setTimeout(() => {
+            router.push("/dashboard");
+          }, 1000);
         }
       } catch (error) {
         console.log(error);
