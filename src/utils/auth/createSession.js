@@ -5,6 +5,7 @@ async function createSession(sessionData) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
+      _id: sessionData._id,
       name: sessionData.name,
       email: sessionData.email,
       role: sessionData.role,

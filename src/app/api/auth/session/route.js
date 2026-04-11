@@ -5,6 +5,6 @@ export async function POST(request) {
   const sessionData = await request.json();
   const cookiesStore = await cookies();
 
-  cookiesStore.set("sessionData", JSON.stringify(sessionData));
+  cookiesStore.set("session", JSON.stringify(sessionData));
   return NextResponse.json({ message: "Session data saved" });
 }
