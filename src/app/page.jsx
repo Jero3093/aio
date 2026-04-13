@@ -2,8 +2,14 @@ import Copyright from "@/components/Copyright";
 import { BsBuildings } from "react-icons/bs";
 import { FaUser } from "react-icons/fa";
 import Link from "next/link";
+import useSession from "@/hooks/useSession";
+import { redirect } from "next/navigation";
 
-export default function Home() {
+export default async function Home() {
+  const session = await useSession();
+
+  session && redirect("/dashboard");
+
   return (
     <main className="w-full min-h-screen flex flex-col items-center justify-between gap-10 py-14">
       <header className="flex flex-col items-center justify-center gap-5">
