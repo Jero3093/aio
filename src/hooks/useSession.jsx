@@ -5,6 +5,8 @@ async function useSession() {
     const cookiesStore = await cookies();
     const cookieSession = cookiesStore.get("session");
 
+    if (!cookieSession) return null;
+
     const session = JSON.parse(cookieSession?.value);
 
     return session ? session : null;
