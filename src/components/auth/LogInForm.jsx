@@ -14,7 +14,7 @@ function LogInForm({ role }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmitCompany = async (e) => {
     e.preventDefault();
 
     if (name !== "" && email !== "" && password !== "") {
@@ -50,11 +50,49 @@ function LogInForm({ role }) {
     }
   };
 
+  const handleSubmitUser = async (e) => {
+    e.preventDefault();
+
+    if (name !== "" && email !== "" && password !== "") {
+      try {
+        const { data } = await supabase.from("users").select();
+
+        for (let i = 0; i < data.length; i++) {
+          if (
+            data[i].name === name &&
+            data[i].email === email &&
+            data[i].password === password
+          ) {
+            const res = await createSession({
+              _id: data[i].id,
+              name: data[i].name,
+              email: data[i].email,
+              role: "user",
+            });
+
+            if (res.ok) {
+              toast.success("Inicio de sesión exitoso");
+            } else {
+              toast.error("Error al iniciar sesión");
+            }
+          }
+          setTimeout(() => {
+            router.push("/dashboard");
+          }, 1000);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
+
   return (
     <form
       method="get"
       className="w-full px-14"
-      onSubmit={(e) => handleSubmit(e)}
+      onSubmit={(e) =>
+        role === "company" ? handleSubmitCompany(e) : handleSubmitUser(e)
+      }
     >
       <div className="flex flex-col gap-7">
         <input

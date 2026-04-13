@@ -24,17 +24,16 @@ export default async function LogIn({ params }) {
         </p>
         <LogInForm role={role} />
       </section>
-      <section>
-        <p className="text-2xl text-stone-600">
-          ¿No tienes una cuenta?{" "}
-          <Link
-            href={`/auth/${role}/signup`}
-            className="text-white"
-          >
-            Registrarse{" "}
-          </Link>
-        </p>
-      </section>
+      {role === "company" && (
+        <section>
+          <p className="text-2xl text-stone-600">
+            ¿No tienes una cuenta?{" "}
+            <Link href={`/auth/${role}/signup`} className="text-white">
+              Registrarse{" "}
+            </Link>
+          </p>
+        </section>
+      )}
       <footer>
         <Copyright />
       </footer>
