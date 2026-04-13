@@ -28,6 +28,7 @@ function LogInForm({ role }) {
             data[i].password === password
           ) {
             const res = await createSession({
+              _id: data[i].id,
               name: data[i].name,
               email: data[i].email,
               role: "empresa",
