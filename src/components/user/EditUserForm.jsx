@@ -1,12 +1,15 @@
 "use client";
 
 import EditUser from "@/utils/auth/users/editUser";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
 
 function EditUserForm({ user }) {
   const [name, setName] = useState(user?.name || "");
   const [email, setEmail] = useState(user?.email || "");
+
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,6 +23,10 @@ function EditUserForm({ user }) {
       resEdit
         ? toast.success("Usuario editado correctamente")
         : toast.error("Error al editar el usuario");
+
+      setTimeout(() => {
+        router.push("/dashboard/users");
+      }, 2000);
     } catch (error) {
       console.log(error?.message);
     }
