@@ -1,4 +1,5 @@
 import DashboardNav from "@/components/dashboard/DashboardNav";
+import ProductOptions from "@/components/inventory/ProductOptions";
 import useProduct from "@/hooks/useProduct";
 import { Toaster } from "sonner";
 
@@ -18,6 +19,7 @@ export default async function Product({ params }) {
           <h3 className="text-xl">{product?.price}</h3>
           <h3 className="text-xl">{product?.stock}</h3>
           <h3 className="text-xl">{product?.description}</h3>
+          <ProductOptions productId={productId} />
         </section>
       </section>
     </main>
