@@ -3,7 +3,7 @@ import Link from "next/link";
 function InventoryVisualizer({ inventory }) {
   return (
     <section className="w-full min-h-56 max-h-72 bg-stone-800 rounded-md mt-6 flex flex-col p-6 gap-4">
-      <h2 className="text-2xl font-semibold">Usuarios</h2>
+      <h2 className="text-2xl font-semibold">Inventario</h2>
       <span className="w-full border-b-2 border-stone-900"></span>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-hidden overflow-y-scroll">
         {inventory.map((product) => (
