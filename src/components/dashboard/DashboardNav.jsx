@@ -1,5 +1,10 @@
 import Link from "next/link";
 import { FiMenu } from "react-icons/fi";
+import { FaUsers, FaBoxOpen } from "react-icons/fa";
+import { IoSettingsSharp } from "react-icons/io5";
+import { MdPayment } from "react-icons/md";
+import { PiCashRegisterFill } from "react-icons/pi";
+import { LuDot } from "react-icons/lu";
 
 function DashboardNav() {
   return (
@@ -14,23 +19,54 @@ function DashboardNav() {
       </section>
       <menu className="flex flex-col gap-8">
         <h2 className="text-3xl font-semibold">Menu</h2>
-        <ul className="flex flex-col gap-5">
+        <ul className="flex flex-col gap-10">
           <li>
-            <p>Inventario</p>
+            <Link
+              href="/dashboard/inventory"
+              className="flex flex-row items-center gap-2"
+            >
+              <FaBoxOpen size={32} />
+              <LuDot size={20} />
+              <p>Inventario</p>
+            </Link>
           </li>
           <li>
-            <p>Facturacion</p>
+            <Link
+              href="/dashboard/billing"
+              className="flex flex-row items-center gap-2"
+            >
+              <MdPayment size={32} />
+              <LuDot size={20} />
+              <p>Facturacion</p>
+            </Link>
           </li>
           <li>
-            <p>Ventas</p>
+            <Link
+              href="/dashboard/sales"
+              className="flex flex-row items-center gap-2"
+            >
+              <PiCashRegisterFill size={32} />
+              <LuDot size={20} />
+              <p>Ventas</p>
+            </Link>
           </li>
           <li>
-            <Link href="/dashboard/users">
+            <Link
+              href="/dashboard/users"
+              className="flex flex-row items-center gap-2"
+            >
+              <FaUsers size={32} />
+              <LuDot size={20} />
               <p>Usuarios</p>
             </Link>
           </li>
           <li>
-            <Link href="/dashboard/settings">
+            <Link
+              href="/dashboard/settings"
+              className="flex flex-row items-center gap-2"
+            >
+              <IoSettingsSharp size={32} />
+              <LuDot size={20} />
               <p>Ajustes</p>
             </Link>
           </li>
