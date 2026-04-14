@@ -1,17 +1,31 @@
 import { createSupabaseClient } from "@/utils/supabase/client";
 
-async function useUsers({ companyId }) {
+async function useUsers({ companyId, forVisualizer }) {
   const supabase = createSupabaseClient();
 
   try {
-    const { data: users, error } = await supabase
-      .from("users")
-      .select("*")
-      .eq("company_id", companyId);
+    if (forVisualizer) {
+      const { data: users, error } = await supabase
+        .from("users")
+        .select("*")
+        .eq("company_id", companyId)
+        .order("created_at", { ascending: true })
+        .limit(12);
 
-    if (error) throw new Error(error.message);
+      if (error) throw new Error(error.message);
 
-    return users;
+      return users;
+    } else {
+      const { data: users, error } = await supabase
+        .from("users")
+        .select("*")
+        .eq("company_id", companyId)
+        .order("created_at", { ascending: true });
+
+      if (error) throw new Error(error.message);
+
+      return users;
+    }
   } catch (error) {
     console.error("Error fetching users:", error);
     return [];

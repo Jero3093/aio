@@ -11,6 +11,7 @@ export default async function Users() {
 
   const users = await useUsers({
     companyId: session._id,
+    forVisualizer: false,
   });
 
   return (
