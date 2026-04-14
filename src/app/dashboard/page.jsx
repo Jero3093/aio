@@ -26,7 +26,7 @@ export default async function Dashboard() {
       <DashboardNav />
       <section className="w-full max-h-screen p-6 overflow-y-scroll overflow-hidden">
         <h2 className="text-4xl font-bold">Dashboard</h2>
-        <UsersVisualizer users={users.reverse()} />
+        <UsersVisualizer users={users} />
         <InventoryVisualizer inventory={inventory} />
         <section className="w-full h-56 bg-stone-800 rounded-md mt-6 flex items-center justify-center"></section>
       </section>

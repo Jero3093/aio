@@ -9,7 +9,8 @@ async function useInventory({ companyId, forVisualizer }) {
         .from("inventory")
         .select()
         .eq("company_id", companyId)
-        .order("created_at", { ascending: true });
+        .order("created_at", { ascending: false })
+        .limit(12);
 
       if (data?.length > 0) {
         return data;
@@ -21,8 +22,7 @@ async function useInventory({ companyId, forVisualizer }) {
         .from("inventory")
         .select()
         .eq("company_id", companyId)
-        .order("created_at", { ascending: true })
-        .limit(12);
+        .order("created_at", { ascending: false });
 
       if (data?.length > 0) {
         return data;

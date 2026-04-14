@@ -9,7 +9,7 @@ async function useUsers({ companyId, forVisualizer }) {
         .from("users")
         .select("*")
         .eq("company_id", companyId)
-        .order("created_at", { ascending: true })
+        .order("created_at", { ascending: false })
         .limit(12);
 
       if (error) throw new Error(error.message);
@@ -20,7 +20,7 @@ async function useUsers({ companyId, forVisualizer }) {
         .from("users")
         .select("*")
         .eq("company_id", companyId)
-        .order("created_at", { ascending: true });
+        .order("created_at", { ascending: false });
 
       if (error) throw new Error(error.message);
 
