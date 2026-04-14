@@ -37,13 +37,16 @@ function LogInForm({ role }) {
             if (res.ok) {
               toast.success("Inicio de sesión exitoso");
             } else {
-              toast.error("Error al iniciar sesión");
+              return toast.error("Error al iniciar sesión");
             }
+
+            return setTimeout(() => {
+              router.push("/dashboard");
+            }, 1000);
           }
-          setTimeout(() => {
-            router.push("/dashboard");
-          }, 1000);
         }
+
+        return toast.error("La empresa no esta registrada");
       } catch (error) {
         console.log(error);
       }
@@ -75,11 +78,13 @@ function LogInForm({ role }) {
             } else {
               toast.error("Error al iniciar sesión");
             }
+            return setTimeout(() => {
+              router.push("/dashboard");
+            }, 1000);
           }
-          setTimeout(() => {
-            router.push("/dashboard");
-          }, 1000);
         }
+
+        return toast.error("El usuario no existe");
       } catch (error) {
         console.log(error);
       }
@@ -98,7 +103,7 @@ function LogInForm({ role }) {
         <input
           type="text"
           placeholder={
-            role === "empresa" ? "Nombre de la Empresa" : "Nombre de Usuario"
+            role === "company" ? "Nombre de la Empresa" : "Nombre de Usuario"
           }
           className="bg-stone-800 text-gray-300 placeholder:text-gray-500 border border-gray-600 rounded-lg p-3 w-full h-12"
           onChange={(e) => setName(e.target.value)}
@@ -106,7 +111,7 @@ function LogInForm({ role }) {
         <input
           type="email"
           placeholder={
-            role === "empresa"
+            role === "company"
               ? "Correo Electrónico de la Empresa"
               : "Correo Electrónico"
           }
