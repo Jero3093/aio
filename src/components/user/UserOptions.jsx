@@ -1,6 +1,7 @@
 "use client";
 
 import DeleteUser from "@/utils/auth/users/deleteUser";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
@@ -24,9 +25,12 @@ function UserOptions({ userId }) {
 
   return (
     <section className="flex flex-row items-center gap-6">
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      <Link
+        href={`/dashboard/users/${userId}/edit`}
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
         Editar
-      </button>
+      </Link>
       <button
         className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
         onClick={() => showToast()}
