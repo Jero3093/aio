@@ -14,21 +14,25 @@ function EditUserForm({ user }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const resEdit = await EditUser({
-        userId: user?.id,
-        newUserData: { name, email },
-      });
+    if (name !== "" && email !== "") {
+      try {
+        const resEdit = await EditUser({
+          userId: user?.id,
+          newUserData: { name, email },
+        });
 
-      resEdit
-        ? toast.success("Usuario editado correctamente")
-        : toast.error("Error al editar el usuario");
+        resEdit
+          ? toast.success("Usuario editado correctamente")
+          : toast.error("Error al editar el usuario");
 
-      setTimeout(() => {
-        router.push("/dashboard/users");
-      }, 2000);
-    } catch (error) {
-      console.log(error?.message);
+        setTimeout(() => {
+          router.push("/dashboard/users");
+        }, 2000);
+      } catch (error) {
+        console.log(error?.message);
+      }
+    } else {
+      toast.error("Ningun campo puede quedar vacio");
     }
   };
 

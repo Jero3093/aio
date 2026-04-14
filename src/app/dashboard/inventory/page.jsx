@@ -21,7 +21,7 @@ export default async function Inventory() {
         <header className="flex flex-row items-center justify-between">
           <h2 className="text-4xl font-bold">Inventario</h2>
           <Link
-            href="/dashboard/inventoru/newProduct"
+            href="/dashboard/inventory/newProduct"
             className="w-fit h-12 rounded-md bg-green-400 text-black px-10 text-lg cursor-pointer flex items-center justify-center"
           >
             <p>Agregar Producto</p>
