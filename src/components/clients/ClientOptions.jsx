@@ -26,7 +26,7 @@ function ClientOptions({ clientId }) {
   return (
     <section className="flex flex-row items-center gap-6">
       <Link
-        href={`/dashboard/inventory/${clientId}/edit`}
+        href={`/dashboard/clients/${clientId}/edit`}
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
       >
         Editar

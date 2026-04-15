@@ -5,7 +5,7 @@ async function DeleteClient({ clientId }) {
   const supabase = createSupabaseClient();
 
   const { error } = await supabase
-    .from("inventory")
+    .from("clients")
     .delete()
     .eq("id", clientId);
 
@@ -20,7 +20,7 @@ async function EditClient({ clientId, newClientData }) {
   const supabase = createSupabaseClient();
 
   const { error } = await supabase
-    .from("inventory")
+    .from("clients")
     .update(newClientData)
     .eq("id", clientId);
 
