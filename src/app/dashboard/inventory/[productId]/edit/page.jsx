@@ -1,10 +1,16 @@
 import DashboardNav from "@/components/dashboard/DashboardNav";
 import EditProductForm from "@/components/inventory/EditProductForm";
 import useProduct from "@/hooks/useProduct";
+import useSession from "@/hooks/useSession";
+import { redirect } from "next/navigation";
 import { Toaster } from "sonner";
 
 export default async function EditProduct({ params }) {
   const { productId } = await params;
+
+  const session = await useSession();
+
+  !session && redirect("/");
 
   const product = await useProduct({ productId });
 

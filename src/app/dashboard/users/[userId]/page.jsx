@@ -1,10 +1,16 @@
 import DashboardNav from "@/components/dashboard/DashboardNav";
 import UserOptions from "@/components/user/UserOptions";
+import useSession from "@/hooks/useSession";
 import useUser from "@/hooks/useUser";
+import { redirect } from "next/navigation";
 import { Toaster } from "sonner";
 
 export default async function User({ params }) {
   const { userId } = await params;
+
+    const session = await useSession();
+
+  !session && redirect("/");
 
   const user = await useUser({ userId });
 

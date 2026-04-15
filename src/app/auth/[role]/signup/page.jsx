@@ -2,9 +2,15 @@ import { Toaster } from "sonner";
 import SignInForm from "@/components/auth/SignInForm";
 import Copyright from "@/components/Copyright";
 import Link from "next/link";
+import useSession from "@/hooks/useSession";
+import { redirect } from "next/navigation";
 
 export default async function SignUp({ params }) {
   const { role } = await params;
+
+    const session = await useSession();
+
+  !session && redirect("/");
 
   return (
     <main className="w-full min-h-screen flex flex-col items-center justify-between gap-10 py-14">
