@@ -5,6 +5,7 @@ import { IoSettingsSharp } from "react-icons/io5";
 import { MdPayment } from "react-icons/md";
 import { PiCashRegisterFill } from "react-icons/pi";
 import { LuDot } from "react-icons/lu";
+import { PiUsersFourFill } from "react-icons/pi";
 
 function DashboardNav() {
   return (
@@ -58,6 +59,16 @@ function DashboardNav() {
               <FaUsers size={32} />
               <LuDot size={20} />
               <p>Usuarios</p>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/dashboard/clients"
+              className="flex flex-row items-center gap-2"
+            >
+              <PiUsersFourFill size={32} />
+              <LuDot size={20} />
+              <p>Clientes</p>
             </Link>
           </li>
           <li>
