@@ -10,7 +10,7 @@ export default async function SignUp({ params }) {
 
     const session = await useSession();
 
-  !session && redirect("/");
+  session && redirect("/dashboard");
 
   return (
     <main className="w-full min-h-screen flex flex-col items-center justify-between gap-10 py-14">
