@@ -34,7 +34,7 @@ function SignInForm({ role }) {
   return (
     <form
       method="post"
-      className="w-full px-14"
+      className="w-full md:px-14"
       onSubmit={(e) => handleSubmit(e)}
     >
       <div className="flex flex-col gap-5">
@@ -43,7 +43,7 @@ function SignInForm({ role }) {
           placeholder={
             role === "company" ? "Nombre de la Empresa" : "Nombre de Usuario"
           }
-          className="bg-stone-800 text-gray-300 placeholder:text-gray-500 border border-gray-600 rounded-lg p-3 w-full h-12"
+          className="flex flex-row gap-14 items-center justify-center rounded-lg p-5 bg-stone-400/30 w-full h-12 placeholder:text-stone-600"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
@@ -54,14 +54,14 @@ function SignInForm({ role }) {
               ? "Correo Electrónico de la Empresa"
               : "Correo Electrónico"
           }
-          className="bg-stone-800 text-gray-300 placeholder:text-gray-500 border border-gray-600 rounded-lg p-3 w-full h-12"
+          className="flex flex-row gap-14 items-center justify-center rounded-lg p-5 bg-stone-400/30 w-full h-12 placeholder:text-stone-600"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="password"
           placeholder="Contraseña"
-          className="bg-stone-800 text-gray-300 placeholder:text-gray-500 border border-gray-600 rounded-lg p-3 w-full h-12"
+          className="flex flex-row gap-14 items-center justify-center rounded-lg p-5 bg-stone-400/30 w-full h-12 placeholder:text-stone-600"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
@@ -69,7 +69,7 @@ function SignInForm({ role }) {
           <input
             type="text"
             placeholder="Descripción de la Empresa"
-            className="bg-stone-800 text-gray-300 placeholder:text-gray-500 border border-gray-600 rounded-lg p-3 w-full h-12"
+            className="flex flex-row gap-14 items-center justify-center rounded-lg p-5 bg-stone-400/30 w-full h-12 placeholder:text-stone-600"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
@@ -77,7 +77,7 @@ function SignInForm({ role }) {
       </div>
       <button
         type="submit"
-        className="mt-7 text-lg bg-white text-black font-bold py-2 px-4 rounded-lg w-full cursor-pointer h-12"
+        className="mt-7 bg-stone-800 text-orange-500 text-2xl font-bold py-2 px-4 rounded-lg w-full cursor-pointer h-14"
       >
         Registrarse
       </button>

@@ -4,6 +4,7 @@ import Copyright from "@/components/Copyright";
 import Link from "next/link";
 import useSession from "@/hooks/useSession";
 import { redirect } from "next/navigation";
+import Header from "@/components/Header";
 
 export default async function LogIn({ params }) {
   const { role } = await params;
@@ -13,19 +14,14 @@ export default async function LogIn({ params }) {
   session && redirect("/dashboard");
 
   return (
-    <main className="w-full min-h-screen flex flex-col items-center justify-between gap-10 py-14">
+    <main className="w-full min-h-screen flex flex-col items-center justify-between gap-10 py-10 px-5 md:px-0">
       <Toaster richColors position="top-right" />
-      <header className="flex flex-col items-center justify-center gap-5">
-        <h1 className="text-4xl font-bold">AIO - All In One</h1>
-        <h2 className="text-md">
-          Sistema de Gestión todo en uno para empresas
-        </h2>
-      </header>
+      <Header />
       <section
         id="options"
-        className="flex flex-col items-center justify-center gap-10 bg-stone-900 w-full max-w-2xl p-10 rounded-lg"
+        className="flex flex-col items-center justify-center gap-12 w-full max-w-2xl p-10 rounded-lg border-4 border-orange-400 bg-stone-100"
       >
-        <p className="text-2xl">
+        <p className="text-2xl md:text-3xl font-semibold text-center">
           Autenticacion de {role === "company" ? "Empresa" : "Usuario"}
         </p>
         <LogInForm role={role} />
@@ -34,7 +30,10 @@ export default async function LogIn({ params }) {
         <section>
           <p className="text-2xl text-stone-600">
             ¿No tienes una cuenta?{" "}
-            <Link href={`/auth/${role}/signup`} className="text-white">
+            <Link
+              href={`/auth/${role}/signup`}
+              className="text-orange-600 font-semibold"
+            >
               Registrarse{" "}
             </Link>
           </p>

@@ -94,7 +94,7 @@ function LogInForm({ role }) {
   return (
     <form
       method="get"
-      className="w-full px-14"
+      className="w-full md:px-14"
       onSubmit={(e) =>
         role === "company" ? handleSubmitCompany(e) : handleSubmitUser(e)
       }
@@ -105,7 +105,7 @@ function LogInForm({ role }) {
           placeholder={
             role === "company" ? "Nombre de la Empresa" : "Nombre de Usuario"
           }
-          className="bg-stone-800 text-gray-300 placeholder:text-gray-500 border border-gray-600 rounded-lg p-3 w-full h-12"
+          className="flex flex-row gap-14 items-center justify-center rounded-lg p-5 bg-stone-400/30 w-full h-12 placeholder:text-stone-600"
           onChange={(e) => setName(e.target.value)}
         />
         <input
@@ -115,19 +115,19 @@ function LogInForm({ role }) {
               ? "Correo Electrónico de la Empresa"
               : "Correo Electrónico"
           }
-          className="bg-stone-800 text-gray-300 placeholder:text-gray-500 border border-gray-600 rounded-lg p-3 w-full h-12"
+          className="flex flex-row gap-14 items-center justify-center rounded-lg p-5 bg-stone-400/30 w-full h-12 placeholder:text-stone-600"
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="password"
           placeholder="Contraseña"
-          className="bg-stone-800 text-gray-300 placeholder:text-gray-500 border border-gray-600 rounded-lg p-3 w-full h-12"
+          className="flex flex-row gap-14 items-center justify-center rounded-lg p-5 bg-stone-400/30 w-full h-12 placeholder:text-stone-600"
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
       <button
         type="submit"
-        className="mt-7 text-lg bg-white text-black font-bold py-2 px-4 rounded-lg w-full cursor-pointer h-12"
+        className="mt-7 bg-stone-800 text-orange-500 text-2xl font-bold py-2 px-4 rounded-lg w-full cursor-pointer h-14"
       >
         Iniciar Sesión
       </button>
