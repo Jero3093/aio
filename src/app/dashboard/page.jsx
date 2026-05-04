@@ -22,13 +22,13 @@ export default async function Dashboard() {
   });
 
   return (
-    <main className="w-full max-h-screen flex flex-row gap-10 py-6">
+    <main className="w-full max-h-screen flex flex-col gap-10 py-6 lg:flex-row">
       <DashboardNav />
       <section className="w-full max-h-screen p-6 overflow-y-scroll overflow-hidden">
-        <h2 className="text-4xl font-bold">Dashboard</h2>
+        <h2 className="text-4xl font-bold text-orange-700">Dashboard</h2>
         <UsersVisualizer users={users} />
         <InventoryVisualizer inventory={inventory} />
-        <section className="w-full h-56 bg-stone-800 rounded-md mt-6 flex items-center justify-center"></section>
+        <section className="w-full h-56 bg-stone-300 rounded-md mt-6 flex items-center justify-center"></section>
       </section>
     </main>
   );
