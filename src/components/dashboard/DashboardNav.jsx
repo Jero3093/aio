@@ -112,7 +112,7 @@ function DashboardNav() {
       <nav className="flex flex-col items-center justify-between w-52 h-full px-4 py-2 gap-16">
         <section className="flex flex-row items-center justify-between w-52 h-16 bg-stone-800 rounded-r-full px-4 py-2">
           <Link href="/dashboard">
-            <img src="logo.png" className="w-22.5 h-10 aspect-auto" />
+            <img src="/logo.png" className="w-22.5 h-10 aspect-auto" />
           </Link>
           <button className="cursor-pointer" onClick={() => menu(true)}>
             <FiMenu size={32} color="oklch(75% 0.183 55.934)" />
