@@ -10,7 +10,7 @@ function UsersVisualizer({ users }) {
           <Link
             key={user.id}
             href={`/dashboard/users/${user.id}`}
-            className="p-4 rounded-lg cursor-pointer hover:bg-stone-700 transition-colors"
+            className="p-4 rounded-lg cursor-pointer hover:bg-stone-300 transition-colors"
           >
             <h3 className="text-lg font-bold">{user.name}</h3>
             <p className="text-gray-700">{user.email}</p>

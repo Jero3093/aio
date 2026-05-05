@@ -10,7 +10,7 @@ function InventoryVisualizer({ inventory }) {
           <Link
             key={product.id}
             href={`/dashboard/inventory/${product.id}`}
-            className="p-4 rounded-lg cursor-pointer hover:bg-stone-700 transition-colors"
+            className="p-4 rounded-lg cursor-pointer hover:bg-stone-300 transition-colors"
           >
             <h3 className="text-lg font-bold">{product.name}</h3>
             <p className="text-gray-700">${product.price}</p>
