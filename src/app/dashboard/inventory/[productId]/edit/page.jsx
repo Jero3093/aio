@@ -20,7 +20,7 @@ export default async function EditProduct({ params }) {
       <section className="w-full max-h-screen p-6 overflow-y-scroll overflow-hidden">
         <h2 className="text-4xl font-bold text-orange-700">Editar Usuario</h2>
         <Toaster position="top-right" richColors />
-        <section className="w-full h-fit bg-stone-300 rounded-md mt-6 flex flex-col gap-2 p-4">
+        <section className="w-full h-fit bg-stone-200 rounded-md mt-6 flex flex-col gap-2 p-4">
           <EditProductForm product={product} />
         </section>
       </section>

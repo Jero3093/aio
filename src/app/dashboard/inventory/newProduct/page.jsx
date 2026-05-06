@@ -15,11 +15,11 @@ export default async function NewProduct() {
       <section className="w-full max-h-screen p-6 overflow-y-scroll overflow-hidden flex flex-col gap-4">
         <header className="flex flex-row items-center justify-between">
           <h2 className="text-4xl font-bold text-orange-700">
-            Crear Nuevo Usuario
+            Crear Nuevo Producto
           </h2>
         </header>
       <Toaster richColors position="top-right" />
-        <section className="w-full h-fit bg-stone-300 rounded-md mt-6 flex flex-col items-center justify-center p-6">
+        <section className="w-full h-fit bg-stone-200 rounded-md mt-6 flex flex-col items-center justify-center p-6">
           <CreateProductForm session={session} />
         </section>
       </section>

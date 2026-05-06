@@ -34,7 +34,7 @@ export default async function Inventory() {
           placeholder="Buscar producto..."
           className="w-full h-12 rounded-lg border-2 border-stone-600 placeholder:text-lg placeholder:text-stone-700 p-4"
         />
-        <section className="w-full h-fit bg-stone-300 rounded-md mt-6 flex flex-col items-center justify-center p-6">
+        <section className="w-full h-fit bg-stone-200 rounded-md mt-6 flex flex-col items-center justify-center p-6">
           <article className="w-full grid grid-cols-3 items-center h-12 border-b border-orange-500 lg:grid-cols-4">
             <h3 className="text-xl font-semibold text-orange-500">Nombre</h3>
             <h3 className="text-xl font-semibold text-orange-500">Precio</h3>
@@ -47,7 +47,7 @@ export default async function Inventory() {
             {inventory.map((product) => (
               <li
                 key={product.id}
-                className="w-full h-full p-2 lg:p-4 rounded-md cursor-pointer hover:bg-stone-400 transition-colors"
+                className="w-full h-full p-2 lg:p-4 rounded-md cursor-pointer hover:bg-stone-300 transition-colors"
               >
                 <Link
                   href={`/dashboard/inventory/${product.id}`}

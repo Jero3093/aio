@@ -14,7 +14,7 @@ export default async function Settings() {
       <DashboardNav />
       <section className="w-full max-h-screen p-6 overflow-y-scroll overflow-hidden">
         <h2 className="text-4xl font-bold text-orange-700">Ajustes</h2>
-        <section className="w-full h-fit bg-stone-300 rounded-md mt-6 flex flex-col p-6">
+        <section className="w-full h-fit bg-stone-200 rounded-md mt-6 flex flex-col p-6">
           <ul className="flex flex-col gap-10">
             <li>
               <Link href="/dashboard/settings/profile">
