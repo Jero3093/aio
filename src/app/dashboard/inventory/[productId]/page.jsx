@@ -15,12 +15,12 @@ export default async function Product({ params }) {
   const product = await useProduct({ productId: productId });
 
   return (
-    <main className="w-full max-h-screen flex flex-row gap-10 py-6">
+    <main className="w-full max-h-screen flex flex-col gap-10 py-6 lg:flex-row">
       <DashboardNav />
-      <Toaster position="top-right" richColors />
       <section className="w-full max-h-screen p-6 overflow-y-scroll overflow-hidden">
-        <h2 className="text-4xl font-bold">Usuario</h2>
-        <section className="w-full h-56 bg-stone-800 rounded-md mt-6 flex flex-col gap-2 p-4">
+        <h2 className="text-4xl font-bold text-orange-700">Usuario</h2>
+        <Toaster position="top-right" richColors />
+        <section className="w-full h-fit bg-stone-300 rounded-md mt-6 flex flex-col gap-2 p-4">
           <h3 className="text-2xl font-semiboldF">{product?.name}</h3>
           <h3 className="text-xl">{product?.price}</h3>
           <h3 className="text-xl">{product?.stock}</h3>

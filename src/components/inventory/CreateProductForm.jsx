@@ -53,27 +53,27 @@ function CreateProductForm({ session }) {
       <input
         type="text"
         id="name"
-        className="bg-stone-800 text-gray-300 placeholder:text-gray-500 border border-gray-600 rounded-lg p-3 w-full h-12"
+        className="text-gray-900 placeholder:text-stone-700 border-2 border-orange-600 rounded-lg p-3 w-full h-12"
         placeholder="Nombre del Producto"
         onChange={(e) => setName(e.target.value)}
       />
       <input
         type="number"
         id="price"
-        className="bg-stone-800 text-gray-300 placeholder:text-gray-500 border border-gray-600 rounded-lg p-3 w-full h-12"
+        className="text-gray-900 placeholder:text-stone-700 border-2 border-orange-600 rounded-lg p-3 w-full h-12"
         placeholder="Precio del Producto"
         onChange={(e) => setPrice(e.target.value)}
       />
       <input
         type="number"
         id="stock"
-        className="bg-stone-800 text-gray-300 placeholder:text-gray-500 border border-gray-600 rounded-lg p-3 w-full h-12"
+        className="text-gray-900 placeholder:text-stone-700 border-2 border-orange-600 rounded-lg p-3 w-full h-12"
         placeholder="Stock del Producto"
         onChange={(e) => setStock(e.target.value)}
       />
       <textarea
         id="description"
-        className="bg-stone-800 text-gray-300 placeholder:text-gray-500 border border-gray-600 rounded-lg p-3 w-full h-32"
+        className="text-gray-900 placeholder:text-stone-700 border-2 border-orange-600 rounded-lg p-3 w-full h-32"
         placeholder="Descripcion del Producto"
         onChange={(e) => setDescription(e.target.value)}
       />

@@ -45,7 +45,7 @@ function EditProductForm({ product }) {
         <input
           type="text"
           id="name"
-          className="bg-stone-800 text-gray-300 placeholder:text-gray-500 border border-gray-600 rounded-lg p-3 w-full h-12"
+          className="text-gray-900 placeholder:text-stone-700 border-2 border-orange-600 rounded-lg p-3 w-full h-12"
           placeholder="Nombre del Producto"
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -56,7 +56,7 @@ function EditProductForm({ product }) {
         <input
           type="number"
           id="price"
-          className="bg-stone-800 text-gray-300 placeholder:text-gray-500 border border-gray-600 rounded-lg p-3 w-full h-12"
+          className="text-gray-900 placeholder:text-stone-700 border-2 border-orange-600 rounded-lg p-3 w-full h-12"
           placeholder="Precio del Producto"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
@@ -67,7 +67,7 @@ function EditProductForm({ product }) {
         <input
           type="number"
           id="stock"
-          className="bg-stone-800 text-gray-300 placeholder:text-gray-500 border border-gray-600 rounded-lg p-3 w-full h-12"
+          className="text-gray-900 placeholder:text-stone-700 border-2 border-orange-600 rounded-lg p-3 w-full h-12"
           placeholder="Stock del Producto"
           value={stock}
           onChange={(e) => setStock(e.target.value)}
@@ -77,7 +77,7 @@ function EditProductForm({ product }) {
         Descripcion
         <textarea
           id="description"
-          className="bg-stone-800 text-gray-300 placeholder:text-gray-500 border border-gray-600 rounded-lg p-3 w-full h-32"
+          className="text-gray-900 placeholder:text-stone-800 border-2 border-orange-600 rounded-lg p-3 w-full h-32"
           placeholder="Descripcion del Producto"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
