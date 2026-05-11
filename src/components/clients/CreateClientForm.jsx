@@ -48,7 +48,7 @@ function CreateClientForm({ session }) {
       <input
         type="text"
         id="fullname"
-        className="bg-stone-800 text-gray-300 placeholder:text-gray-500 border border-gray-600 rounded-lg p-3 w-full h-12"
+        className="text-gray-900 placeholder:text-stone-700 border-2 border-orange-600 rounded-lg p-3 w-full h-12"
         placeholder="Nombre Completo del Cliente"
         onChange={(e) => setFullname(e.target.value)}
       />

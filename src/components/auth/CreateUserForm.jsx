@@ -53,7 +53,7 @@ function CreateUserForm({ session }) {
         name="name"
         id="name"
         placeholder="Nombre Completo"
-        className="w-full h-12 rounded-lg border-2 border-stone-600 placeholder:text-lg placeholder:text-stone-700 p-4"
+        className="text-gray-900 placeholder:text-stone-700 border-2 border-orange-600 rounded-lg p-3 w-full h-12"
         onChange={(e) => setFullName(e.target.value)}
       />
       <input
@@ -61,7 +61,7 @@ function CreateUserForm({ session }) {
         name="email"
         id="email"
         placeholder="Correo Electronico"
-        className="w-full h-12 rounded-lg border-2 border-stone-600 placeholder:text-lg placeholder:text-stone-700 p-4"
+        className="text-gray-900 placeholder:text-stone-700 border-2 border-orange-600 rounded-lg p-3 w-full h-12"
         onChange={(e) => setEmail(e.target.value)}
       />
       <input
@@ -69,7 +69,7 @@ function CreateUserForm({ session }) {
         name="password"
         id="password"
         placeholder="Contraseña"
-        className="w-full h-12 rounded-lg border-2 border-stone-600 placeholder:text-lg placeholder:text-stone-700 p-4"
+        className="text-gray-900 placeholder:text-stone-700 border-2 border-orange-600 rounded-lg p-3 w-full h-12"
         onChange={(e) => setPassword(e.target.value)}
       />
       <button

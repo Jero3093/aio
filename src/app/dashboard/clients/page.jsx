@@ -15,11 +15,11 @@ export default async function Clients() {
   });
 
   return (
-    <main className="w-full max-h-screen flex flex-row gap-10 py-6">
+    <main className="w-full max-h-screen flex flex-col gap-10 py-6 lg:flex-row">
       <DashboardNav />
       <section className="w-full max-h-screen p-6 overflow-y-scroll overflow-hidden flex flex-col gap-4">
-        <header className="flex flex-row items-center justify-between">
-          <h2 className="text-4xl font-bold">Clientes</h2>
+        <header className="flex flex-col lg:flex-row gap-5 lg:items-center justify-between">
+          <h2 className="text-4xl font-bold text-orange-700">Clientes</h2>
           <Link
             href="/dashboard/clients/newClient"
             className="w-fit h-12 rounded-md bg-green-400 text-black px-10 text-lg cursor-pointer flex items-center justify-center"
@@ -34,25 +34,31 @@ export default async function Clients() {
           placeholder="Buscar cliente..."
           className="w-full h-12 rounded-lg border-2 border-stone-600 placeholder:text-lg placeholder:text-stone-700 p-4"
         />
-        <section className="w-full h-fit bg-stone-900 rounded-md mt-6 flex flex-col items-center justify-center p-6">
-          <article className="w-full grid grid-cols-3 items-center h-12">
-            <h3 className="text-xl font-semibold">Nombre</h3>
-            <h3 className="text-xl font-semibold">Ingresado Por</h3>
-            <h3 className="text-xl font-semibold">Fecha de Creacion</h3>
+        <section className="w-full h-fit bg-stone-200 rounded-md mt-6 flex flex-col items-center justify-center p-6">
+          <article className="w-full grid grid-cols-2 items-center h-12 border-b border-orange-500 lg:grid-cols-3">
+            <h3 className="text-xl font-semibold text-orange-500">Nombre</h3>
+            <h3 className="text-xl font-semibold text-orange-500">
+              Ingresado Por
+            </h3>
+            <h3 className="text-xl font-semibold text-orange-500 hidden lg:block">
+              Fecha de Creacion
+            </h3>
           </article>
           <ul className="w-full h-full flex flex-col gap-4 py-6">
             {clients.map((client) => (
               <li
                 key={client.id}
-                className="w-full h-full gap-4 p-4 rounded-md cursor-pointer hover:bg-stone-800 transition-colors"
+                className="w-full h-full gap-4 p-4 rounded-md cursor-pointer hover:bg-stone-300 transition-colors"
               >
                 <Link
                   href={`/dashboard/clients/${client.id}`}
-                  className="grid grid-cols-3 w-full h-full"
+                  className="grid grid-cols-2 lg:grid-cols-3 w-full h-full"
                 >
                   <p>{client.full_name}</p>
                   <p>{client.registered_by}</p>
-                  <p>{client.created_at.substring(0, 10)}</p>
+                  <p className="hidden lg:block">
+                    {client.created_at.substring(0, 10)}
+                  </p>
                 </Link>
               </li>
             ))}

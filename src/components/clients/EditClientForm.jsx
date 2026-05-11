@@ -44,7 +44,7 @@ function EditClientForm({ client }) {
         <input
           type="text"
           id="name"
-          className="bg-stone-800 text-gray-300 placeholder:text-gray-500 border border-gray-600 rounded-lg p-3 w-full h-12"
+          className="text-gray-900 placeholder:text-stone-700 border-2 border-orange-600 rounded-lg p-3 w-full h-12"
           placeholder="Nombre Completo del Cliente"
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
