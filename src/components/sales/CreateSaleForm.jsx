@@ -8,9 +8,7 @@ import QuantityButtons from "./QuantityButtons";
 
 function CreateSaleForm({ session, clients, inventory }) {
   const [clientId, setClientId] = useState("");
-  const [products, setProducts] = useState([]);
   const [totalBilling, setTotalBilling] = useState(0);
-  const [billingComplete, setBillingComplete] = useState(false);
 
   const [selectedProducts, setSelectedProducts] = useState([]);
 
@@ -18,35 +16,35 @@ function CreateSaleForm({ session, clients, inventory }) {
 
   const router = useRouter();
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  //   if (clientId === "" || products.length === 0 || totalBilling === 0)
-  //     return toast.error("Debe completar todos los campos para continuar");
+    if (clientId === "" || selectedProducts.length === 0 || totalBilling === 0)
+      return toast.error("Debe completar todos los campos para continuar");
 
-  //   try {
-  //     const { error } = await supabase.from("sales").insert({
-  //       company_id: session?._id,
-  //       client_id: clientId,
-  //       products: products,
-  //       total_billing: totalBilling,
-  //       registered_by: session?._id,
-  //       billing_complete: billingComplete,
-  //     });
+    try {
+      const { error } = await supabase.from("sales").insert({
+        company_id: session?._id,
+        client_id: clientId,
+        products: selectedProducts,
+        total_billing: totalBilling,
+        registered_by: session?._id,
+        billing_complete: false,
+      });
 
-  //     if (!error) {
-  //       toast.success("Venta añadida correctamente");
+      if (!error) {
+        toast.success("Venta añadida correctamente");
 
-  //       setTimeout(() => {
-  //         router.push("/dashboard/sales");
-  //       }, 2000);
-  //     } else {
-  //       toast.error("Error al ingrear la venta");
-  //     }
-  //   } catch (error) {
-  //     console.log(error?.message);
-  //   }
-  // };
+        setTimeout(() => {
+          router.push("/dashboard/sales");
+        }, 2000);
+      } else {
+        toast.error("Error al ingrear la venta");
+      }
+    } catch (error) {
+      console.log(error?.message);
+    }
+  };
 
   // Client Select Component
   const ClientSelect = () => {
@@ -54,7 +52,7 @@ function CreateSaleForm({ session, clients, inventory }) {
       <select
         name="clients"
         id="clients"
-        className="bg-stone-800 text-gray-300 placeholder:text-gray-500 border border-gray-600 rounded-lg p-3 w-full h-12 cursor-pointer "
+        className="text-gray-800 placeholder:text-gray-700 border-orange-600 border-2 rounded-lg p-3 w-full h-12 cursor-pointer "
         onChange={(e) => setClientId(e.target.value)}
       >
         <option value="Clientes">Clientes</option>
@@ -105,16 +103,16 @@ function CreateSaleForm({ session, clients, inventory }) {
     return (
       <article
         id="modal"
-        className="hidden bg-zinc-700/25 backdrop-blur-md fixed place-items-center w-screen h-screen"
+        className="hidden bg-zinc-300/25 backdrop-blur-md fixed place-items-center w-screen h-screen"
       >
-        <menu className="w-full max-w-96 p-8 h-125 flex flex-col items-center gap-5 bg-stone-700 rounded-md shadow-md">
+        <menu className="w-full max-w-96 p-8 h-125 flex flex-col items-center gap-5 bg-stone-300 rounded-md shadow-md">
           <h4 className="text-2xl font-semibold">Productos Disponibles</h4>
 
           <select
             name="products"
             id="products"
             multiple
-            className="bg-stone-800 rounded-md w-full h-full outline-none p-2"
+            className="bg-stone-400 rounded-md w-full h-full outline-none p-2"
             onChange={(e) => handleSelectProduct(e)}
           >
             {products.length > 0 &&
